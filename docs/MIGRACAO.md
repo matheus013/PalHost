@@ -72,4 +72,6 @@ Sem nenhum backup, copie a pasta `Server\Pal\Saved\` inteira do disco antigo par
 
 ## Validação
 
-O fluxo Export → clone → Import foi ensaiado de ponta a ponta numa pasta separada do mesmo PC em 25/10/2026: o servidor importado subiu com o mesmo mundo (mesmo `worldguid` na REST API), as mesmas configurações e todos os mods.
+Em 25/10/2026 o `Export.ps1` foi testado com o servidor online (com um jogador conectado): o pacote saiu com 12,8 MB contendo o mundo (`Level.sav` + `GameUserSettings.ini` com o identificador do mundo), os quatro `Config/*.json` e os 14 arquivos de mods. O `Import.ps1` ainda **não** foi ensaiado de ponta a ponta (o ensaio exige desligar o servidor real, porque as duas cópias usariam as mesmas portas). Até lá, guarde também o backup mais recente de `Backups\` — com ele a [migração manual](#migração-manual-sem-o-export) sempre funciona.
+
+> Um computador só roda um servidor PalHost por vez: os scripts identificam o servidor pelo nome do processo e pelas portas 8211/8212.
