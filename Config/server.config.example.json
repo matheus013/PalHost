@@ -1,0 +1,39 @@
+{
+  "steam": {
+    "appId": "2394010",
+    "steamCmdUrl": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"
+  },
+  "server": {
+    "name": "PalHost Server",
+    "description": "Servidor privado Palworld 1.0",
+    "port": 8211,
+    "publicPort": 8211,
+    "maxPlayers": 16,
+    "serverPassword": "CHANGE_ME",
+    "adminPassword": "CHANGE_ME",
+    "rconPort": 25575,
+    "restApiPort": 8212,
+    "launchArgs": [
+      "-useperfthreads",
+      "-NoAsyncLoadingThread",
+      "-UseMultithreadForDS",
+      "-logformat=text"
+    ]
+  },
+  "backup": {
+    "intervalMinutes": 30,
+    "retention": 48,
+    "beforeUpdate": true
+  },
+  "restart": {
+    "dailyAt": "05:00",
+    "warningMinutes": [15, 5, 1],
+    "autoUpdate": true
+  },
+  "nexus": {
+    "apiKey": ""
+  },
+  "logs": {
+    "retentionDays": 14
+  }
+}

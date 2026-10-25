@@ -1,0 +1,212 @@
+﻿{
+    "_comment":  [
+                     "Palworld has NO Steam Workshop. Mods come from Nexus Mods (https://www.nexusmods.com/palworld).",
+                     "provider=nexus + modId: with a Premium API key downloads are fully automatic; otherwise drop the archive into Mods/Nexus/\u003cName\u003e/.",
+                     "provider=local: point \u0027path\u0027 to a zip/pak/folder anywhere on disk.",
+                     "provider=github: \"repo\" (owner/name) + \"assetPattern\"/\"assetExclude\" wildcards; downloads the latest release asset. provider=steam: kept for a future Workshop (uses workshopId).",
+                     "installType: ue4ss | ue4ss-mod | palschema | pak | logicmods (payloads rooted at Pal\\ are auto-detected as gameroot).",
+                     "All modIds below were verified against the Nexus API on 2026-07-31.",
+                     "\"client\": true marks mods players must also install (pak/UI mods) - Scripts\\BuildClientMods.ps1 packs them into ClientMods-PalHost.zip."
+                 ],
+    "mods":  [
+                 {
+                     "name":  "UE4SS",
+                     "provider":  "github",
+                     "repo":  "Okaetsu/RE-UE4SS",
+                     "assetPattern":  "UE4SS-Palworld-*.zip",
+                     "assetExclude":  "*zDev*",
+                     "page":  "https://github.com/Okaetsu/RE-UE4SS/releases/latest",
+                     "installType":  "ue4ss",
+                     "enabled":  true,
+                     "dependsOn":  [
+
+                                   ],
+                     "notes":  "RE-UE4SS Okaetsu Experimental-Palworld. Source moved to GitHub on 2026-10-25 (Nexus 3035 was hidden). Release 2281fa31 fixes FText crashes of the July build.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "PalSchema",
+                     "provider":  "github",
+                     "repo":  "Okaetsu/PalSchema",
+                     "assetPattern":  "PalSchema_*.zip",
+                     "assetExclude":  "*_Dev*",
+                     "page":  "https://github.com/Okaetsu/PalSchema/releases/latest",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "Moved to GitHub 2026-10-25 (Nexus Premium expired). Each release names the UE4SS build it needs - 0.6.71 pairs with UE4SS 2281fa31.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "PalServerSettings",
+                     "provider":  "nexus",
+                     "modId":  4166,
+                     "page":  "https://www.nexusmods.com/palworld/mods/4166",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  false,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "DISABLED 2026-07-31: crashes with the UE4SS Prepackaged custom build. Not needed - our rendered PalWorldSettings.ini already applies all world settings each boot.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "MapUnlocker",
+                     "provider":  "nexus",
+                     "modId":  16,
+                     "page":  "https://www.nexusmods.com/palworld/mods/16",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "v1.0.0 for Palworld 1.0. Reveals the full map (fast travel still discovered normally). Replaces \u0027Shared Map\u0027 / \u0027Better Map\u0027.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "LessRestrictiveBuilding",
+                     "provider":  "nexus",
+                     "modId":  98,
+                     "page":  "https://www.nexusmods.com/palworld/mods/98",
+                     "installType":  "pak",
+                     "enabled":  true,
+                     "dependsOn":  [
+
+                                   ],
+                     "notes":  "v1.6.1 (pak, 2026-09-07) - first version compatible with Palworld 1.0.4+. 1.5.x hangs the 1.0.5 server at boot. Install on server AND clients (ClientMods-PalHost.zip).",
+                     "client":  true
+                 },
+                 {
+                     "name":  "IncreasedBaseAndWorkers",
+                     "provider":  "nexus",
+                     "modId":  55,
+                     "page":  "https://www.nexusmods.com/palworld/mods/55",
+                     "installType":  "pak",
+                     "enabled":  true,
+                     "dependsOn":  [
+
+                                   ],
+                     "notes":  "vuxBaseIncreaseGradual x2 (fileId 354): +1 base and +2 worker pals per base level. Switched from x5 on 2026-07-31 per user request. Install on server AND clients.",
+                     "fileId":  354,
+                     "client":  true
+                 },
+                 {
+                     "name":  "StuckPalRescuer",
+                     "provider":  "nexus",
+                     "modId":  585,
+                     "page":  "https://www.nexusmods.com/palworld/mods/585",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  false,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "Server-side Lua: respawns stuck worker Pals at the Palbox. Last updated Feb/2024 - test on 1.0.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "StackSizeIncrease",
+                     "provider":  "nexus",
+                     "modId":  3899,
+                     "page":  "https://www.nexusmods.com/palworld/mods/3899",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "\u0027ChickNomad - No Stack Limit\u0027 (updated for 1.0). Raises only standard 9999-stacks; weapons/armor untouched.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "CarryWeightIncrease",
+                     "provider":  "nexus",
+                     "modId":  11,
+                     "page":  "https://www.nexusmods.com/palworld/mods/11",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "Classic carry weight mod. Last updated Feb/2024 - test on 1.0.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "AutoPickup",
+                     "provider":  "nexus",
+                     "modId":  3430,
+                     "page":  "https://www.nexusmods.com/palworld/mods/3430",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  false,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "\u0027ChickNomad - AutoLootNearbyItems (for 1.0)\u0027. Auto-collects nearby drops.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "FasterBreeding",
+                     "provider":  "nexus",
+                     "modId":  2565,
+                     "page":  "https://www.nexusmods.com/palworld/mods/2565",
+                     "installType":  "palschema",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "PalSchema"
+                                   ],
+                     "notes":  "\u0027Faster Breeding - PalSchema\u0027: breeding ranch egg every ~60s. Works on servers, clients need nothing.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "InfiniteStaminaFlying",
+                     "provider":  "nexus",
+                     "modId":  13,
+                     "page":  "https://www.nexusmods.com/palworld/mods/13",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  false,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "DISABLED 2026-10-25: redundant - world setting PalStaminaDecreaceRate=0 already removes mounted Pal stamina drain. 2024 Lua mod with join hooks, less risk without it.",
+                     "client":  false
+                 },
+                 {
+                     "name":  "AdminCommands",
+                     "provider":  "nexus",
+                     "modId":  2371,
+                     "page":  "https://www.nexusmods.com/palworld/mods/2371",
+                     "installType":  "ue4ss-mod",
+                     "enabled":  false,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "DISABLED 2026-07-31: v3.1.2 crashes the server with the UE4SS Prepackaged custom build (needs official UE4SS experimental). User does not need it (private server with friends).",
+                     "client":  false
+                 },
+                 {
+                     "name":  "BetterPalbox",
+                     "provider":  "nexus",
+                     "modId":  3987,
+                     "page":  "https://www.nexusmods.com/palworld/mods/3987",
+                     "installType":  "pak",
+                     "enabled":  false,
+                     "dependsOn":  [
+
+                                   ],
+                     "notes":  "\u0027Palbox Sorter\u0027 v3.11 (updated for 1.0). Client-side UI mod - each player installs locally; disabled on the server by default.",
+                     "client":  true
+                 },
+                 {
+                     "name":  "CombineDrops",
+                     "provider":  "nexus",
+                     "modId":  4575,
+                     "page":  "https://www.nexusmods.com/palworld/mods/4575",
+                     "enabled":  true,
+                     "dependsOn":  [
+                                       "UE4SS"
+                                   ],
+                     "notes":  "v2.0 (2026-08-04): server support + fixes the random crashes of v1.0. Merges nearby ground drops - offsets the 10x drop rate.",
+                     "client":  false
+                 }
+             ]
+}

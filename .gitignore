@@ -1,0 +1,27 @@
+# Secrets: admin password, server password, Nexus API key.
+# Install.ps1 creates it from server.config.example.json; Export.ps1 carries it to a new PC.
+/Config/server.config.json
+/Config/*.bak
+
+# Game server and tools (re-created by Install.ps1)
+/Server/
+/SteamCMD/
+
+# World data, backups and migration packages (private, never public)
+/Saves
+/Saves/
+/Backups/
+
+# Mod payloads: third-party files that must not be redistributed.
+# Mods are declared in Config/mods.json and downloaded by the ModManager.
+/Mods/
+/ClientMods-PalHost.zip
+
+# Runtime state and logs
+/Logs/
+/.watchdog.pid
+/.stop-requested
+
+# Local editor / assistant settings
+/.claude/
+/.vscode/

@@ -1,0 +1,32 @@
+{
+  "_comment": "Overrides applied on top of DefaultPalWorldSettings.ini. Values are written VERBATIM into OptionSettings — keep the exact INI formatting (floats with 6 decimals, True/False, quoted strings).",
+
+  "ExpRate": "10.000000",
+  "MonsterFarmActionSpeedRate": "10.000000",
+  "WorkSpeedRate": "10.000000",
+  "PalCaptureRate": "2.000000",
+  "EnemyDropItemRate": "10.000000",
+  "CollectionDropRate": "10.000000",
+  "PalEggDefaultHatchingTime": "0.000000",
+  "PalStaminaDecreaceRate": "0.000000",
+
+  "DayTimeSpeedRate": "1.000000",
+  "NightTimeSpeedRate": "1.000000",
+  "DeathPenalty": "None",
+
+  "BaseCampMaxNumInGuild": "10",
+  "BaseCampWorkerMaxNum": "50",
+  "bEnableInvaderEnemy": "False",
+
+  "DropItemMaxNum": "2000",
+  "PhysicsActiveDropItemMaxNum": "300",
+  "DropItemAliveMaxHours": "0.500000",
+
+  "bAllowGlobalPalboxImport": "False",
+  "bAllowGlobalPalboxExport": "True",
+
+  "bShowPlayerList": "True",
+  "bIsUseBackupSaveData": "True",
+  "RCONEnabled": "True",
+  "RESTAPIEnabled": "True"
+}
